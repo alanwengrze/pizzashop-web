@@ -1,11 +1,20 @@
+import '@/global.css'
+
+import { Toaster } from './components/ui/sonner'
 
 
-function App() {
+import { Routes } from './routes'
+import { Helmet, HelmetProvider } from 'react-helmet-async'
+export function App() {
   return (
     <>
-      <h1>Olá mundo!</h1>
+      <HelmetProvider>
+        <Helmet 
+          titleTemplate="%s | pizza.shop"
+        />
+        <Toaster richColors closeButton/>
+        <Routes />
+      </HelmetProvider>
     </>
   )
 }
-
-export default App
